@@ -23,8 +23,21 @@
 // ma domattina ci vediamo in aula comunque alle 10 per Q&A.Il pomeriggio è sempre lui…Buon gioco di pixel e bit
 
 var app = new Vue({
-  el: '#root',
+  el: '#app',
   data: {
-    message: ''
+    message: 'BOOLEAN',
+    newTodo: '',  //creo lo spazio per ciò che verrà scritto nell'input
+    todos: [  //creo l'array degli elementi che compariranno sotto
+
+    ]
+  },
+  methods: {
+    storeTodo() {
+      this.todos.push(this.newTodo)  //faccio in modo che quando qualcuno scrive qualcosa nell'input venga poi pushato nell'array todos
+      this.newTodo = ''  //faccio in modo che una volta scritta la parola nell'input e poi cliccata, venga poi rimossa dalla barra di input
+    },
+    deleteTodo(index) {
+      this.todos.splice(index, 1)  //perché index, 1?
+    }
   }
 });

@@ -8,3 +8,18 @@
 body {
 
 }
+
+.h1container {
+  display: flex;
+  justify-content: center;
+}
+
+.inputcontainer {
+  display: flex;
+  justify-content: center;
+}
+
+.listcontainer {
+  display: flex;
+  justify-content: center;
+}

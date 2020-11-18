@@ -3,15 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
   </head>
+
   <body>
-    <div id='#root' class='container'>
-      <div class="">
-        <input v-model='message'>
-        <button type="button" name="button">HELLO</button>
-      </div>
+    <div id="app">
+
+      <div class="h1container">
+        <h1>{{message}}</h1>
+        </div>
+
+        <div class="inputcontainer">
+        <input v-model="newTodo" placeholder="Nuovo Todo" @keyup.enter="storeTodo">
+        <button @click="storeTodo">CLICCA</button>
+        </div>
+
+        <div class="listcontainer">
+        <ol>
+          <li v-for='(todo, index) in todos'> <!-- creo il ciclo per l'array, all'interno della parentesi c'è il valore del ciclo che si chiama appunto todo e il suo index che ci servirà per quando dovremo eliminare gli elementi(?) -->
+          {{todo}}
+          <button @click='deleteTodo(index)'>X</button>
+        </li>
+        </ol>
+        </div>
+
 
     </div>
 
