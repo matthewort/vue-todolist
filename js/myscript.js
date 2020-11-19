@@ -25,7 +25,8 @@
 var app = new Vue({
   el: '#app',
   data: {
-    message: 'BOOLEAN',
+    // message: 'BOOLEAN',
+    image: 'img/booleanlogo.png',
     newTodo: '',  //creo lo spazio per ciò che verrà scritto nell'input
     todos: [  //creo l'array degli elementi che compariranno sotto
 

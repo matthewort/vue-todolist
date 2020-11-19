@@ -11,19 +11,20 @@
     <div id="app">
 
       <div class="h1container">
-        <h1>{{message}}</h1>
+        <!-- <h1>{{message}}</h1> -->
+        <img class='bool' v-bind:src='image'/>
         </div>
 
         <div class="inputcontainer">
-        <input v-model="newTodo" placeholder="Nuovo Todo" @keyup.enter="storeTodo">
-        <button @click="storeTodo">CLICCA</button>
+        <input class='barra' v-model="newTodo" placeholder="Nuovo Todo" @keyup.enter="storeTodo">
+        <button class='bottone' @click="storeTodo">CLICCA</button>
         </div>
 
         <div class="listcontainer">
-        <ol>
-          <li v-for='(todo, index) in todos'> <!-- creo il ciclo per l'array, all'interno della parentesi c'è il valore del ciclo che si chiama appunto todo e il suo index che ci servirà per quando dovremo eliminare gli elementi(?) -->
+        <ol class='list'>
+          <li class='listelement' v-for='(todo, index) in todos'> <!-- creo il ciclo per l'array, all'interno della parentesi c'è il valore del ciclo che si chiama appunto todo e il suo index che ci servirà per quando dovremo eliminare gli elementi(?) -->
           {{todo}}
-          <button @click='deleteTodo(index)'>X</button>
+          <button classe='x' @click='deleteTodo(index)'>X</button>
         </li>
         </ol>
         </div>
